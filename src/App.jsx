@@ -8,7 +8,7 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Stats from "./components/Stats";
-import WhyMe from "./components/WhyMe";
+/*import WhyMe from "./components/WhyMe";*/
 
 function App() {
   return (
@@ -22,8 +22,9 @@ function App() {
       <div className="h-24 bg-slate-950" />
       <Stats />
       <div className="h-24 bg-slate-950" />
-      <WhyMe />
+      {/*<WhyMe />
       <div className="h-24 bg-slate-950" />
+*/}
       <Skills />
       <div className="h-20" />
       <Timeline />

@@ -23,7 +23,10 @@ const skills = [
 
 function About() {
   return (
-    <section id="about" className="bg-slate-900 py-36 text-white border-t border-white/5">
+   <section
+  id="about"
+  className="bg-slate-900 py-28 border-t border-slate-800"
+>
       <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Image */}
@@ -34,11 +37,17 @@ function About() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <img
-            src="/profile.PNG"
-            alt="Dounamba Traoré"
-            className="w-80 rounded-3xl shadow-2xl border border-purple-500"
-          />
+          <div className="relative">
+
+  <div className="absolute inset-0 bg-purple-600 blur-[120px] opacity-30 rounded-full"></div>
+
+  <img
+    src="/profile.PNG"
+    alt="Dounamba Traoré"
+    className="relative w-96 h-96 rounded-full object-cover border-4 border-purple-500 shadow-2xl"
+  />
+
+</div>
         </motion.div>
 
         {/* Texte */}

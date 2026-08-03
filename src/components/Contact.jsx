@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -7,11 +9,30 @@ import {
 } from "react-icons/fa";
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_yvmctn8",
+        "template_zoz8zg6",
+        form.current,
+        "YN-uB33VJTsB0bn_Z"
+      )
+      .then(() => {
+        alert("✅ Votre message a été envoyé avec succès !");
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("❌ Une erreur est survenue.");
+      });
+  };
+
   return (
-    <section
-  id="contact"
-  className="bg-slate-900 py-28 border-t border-slate-800"
->
+    <section id="contact" className="bg-slate-900 py-28 text-white">
       <div className="max-w-7xl mx-auto px-8">
 
         <motion.h2
@@ -29,13 +50,7 @@ function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12">
 
-          {/* Informations */}
-          <motion.div
-            initial={{ x: -60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
 
             <div className="flex items-center gap-5 bg-slate-800 p-5 rounded-2xl">
               <FaEnvelope className="text-purple-400 text-2xl" />
@@ -81,31 +96,35 @@ function Contact() {
               </a>
             </div>
 
-          </motion.div>
+          </div>
 
-          {/* Formulaire */}
-          <motion.form
-            initial={{ x: 60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+          <form
+            ref={form}
+            onSubmit={sendEmail}
             className="bg-slate-800 p-8 rounded-3xl shadow-xl space-y-5"
           >
 
             <input
               type="text"
+              name="from_name"
               placeholder="Votre nom"
+              required
               className="w-full bg-slate-900 rounded-xl p-4 outline-none focus:ring-2 focus:ring-purple-500"
             />
 
             <input
               type="email"
+              name="from_email"
               placeholder="Votre email"
+              required
               className="w-full bg-slate-900 rounded-xl p-4 outline-none focus:ring-2 focus:ring-purple-500"
             />
 
             <textarea
               rows="6"
+              name="message"
               placeholder="Votre message"
+              required
               className="w-full bg-slate-900 rounded-xl p-4 outline-none focus:ring-2 focus:ring-purple-500"
             />
 
@@ -116,7 +135,7 @@ function Contact() {
               Envoyer le message
             </button>
 
-          </motion.form>
+          </form>
 
         </div>
 
