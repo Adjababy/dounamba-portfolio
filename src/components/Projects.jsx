@@ -6,7 +6,7 @@ const projects = [
     title: "Portfolio Personnel",
     description:
       "Portfolio moderne développé avec React, Vite et Tailwind CSS pour présenter mon parcours, mes compétences et mes réalisations.",
-    image: "/projects/portfolio.jpeg",
+    image: "/projects/portfolio.png",
     tech: ["React", "Vite", "Tailwind CSS"],
     github: "https://github.com/Adjababy/react-portefolio",
     demo: "https://adjababy.github.io/react-portefolio/",
@@ -33,13 +33,13 @@ const projects = [
   },
 
   {
-    title: "Projet à venir",
+    title: "Projet en cours",
     description:
-      "Une nouvelle application est en cours de développement et sera bientôt ajoutée à mon portfolio.",
-    image: "/projects/coming-soon.jpeg",
-    tech: ["React"],
+      "Une nouvelle application de blog est en cours de développement et sera bientôt complètement finie.",
+    image: "/projects/coming-soon.webp",
+    tech: ["React","Bootstrap"],
     github: "https://adjababy.github.io/a-blog-app/",
-    demo: "#",
+    demo: "https://adjababy.github.io/a-blog-app/#",
   },
 ];
 
@@ -117,7 +117,7 @@ function Projects() {
       className="flex items-center gap-2 bg-purple-600 px-4 py-3 rounded-lg hover:bg-purple-700 transition"
     >
       <FaExternalLinkAlt />
-      Voir le projet
+      Demo
     </a>
   )}
 </div>
