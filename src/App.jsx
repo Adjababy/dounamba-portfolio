@@ -8,12 +8,29 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Stats from "./components/Stats";
+import { useState, useEffect } from "react";
+import Loader from "./components/Loader";
+import MouseGlow from "./components/MouseGlow";
 /*import WhyMe from "./components/WhyMe";*/
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2200);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
+    <Loader loading={loading} />
+
+      {!loading && (
+        <>
     <main>
+          <MouseGlow />
       <Navbar />
 
       <Hero />
@@ -38,6 +55,8 @@ function App() {
     </main>
       
       <Footer />
+       </>
+      )}
     </>
   );
 }

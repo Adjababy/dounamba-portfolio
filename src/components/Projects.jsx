@@ -38,7 +38,7 @@ const projects = [
       "Une nouvelle application est en cours de développement et sera bientôt ajoutée à mon portfolio.",
     image: "/projects/coming-soon.jpeg",
     tech: ["React"],
-    github: "#",
+    github: "https://adjababy.github.io/a-blog-app/",
     demo: "#",
   },
 ];
