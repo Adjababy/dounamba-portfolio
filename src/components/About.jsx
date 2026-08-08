@@ -63,7 +63,7 @@ function About() {
 
           <p className="text-gray-300 leading-8 text-lg mb-10">
             Je suis <strong>Dounamba Traoré</strong>, développeuse Front-End
-            React et ingénieure en Réseaux & Télécommunications. J'aime créer
+            React, designer graphique et ingénieure en Réseaux & Télécommunications. J'aime créer
             des applications web modernes, rapides et intuitives tout en
             combinant mes compétences en développement, réseaux et design
             graphique.

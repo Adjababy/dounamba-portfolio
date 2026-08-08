@@ -4,55 +4,58 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const projects = [
   {
     title: "Portfolio Personnel",
-    description:
-      "Portfolio moderne développé avec React, Vite et Tailwind CSS pour présenter mon parcours, mes compétences et mes réalisations.",
-    image: "/projects/portfolio.png",
-    tech: ["React", "Vite", "Tailwind CSS"],
+  description:
+    "Portfolio moderne développé avec React, Vite et Tailwind CSS pour présenter mon parcours, mes compétences et mes réalisations.",
+  image: "/projects/portfolio.png",
+  imagePosition: "object-left",
+  tech: ["React", "Vite", "Tailwind CSS"],
     github: "https://github.com/Adjababy/react-portefolio",
     demo: "https://adjababy.github.io/react-portefolio/",
   },
 
-  {
-    title: "Travel Explore",
-    description:
-      "Application web permettant de découvrir des destinations de voyage à travers une interface moderne et responsive.",
-    image: "/projects/travel.jpeg",
-    tech: ["React", "CSS"],
-    github: "https://github.com/Adjababy/travel-explore",
-    demo: "https://adjababy.github.io/travel-explore/#/",
-  },
+ {
+  title: "Travel Explore",
+  description:
+    "Application web permettant de découvrir des destinations de voyage à travers une interface moderne et responsive.",
+  image: "/projects/travel.jpeg",
+  imagePosition: "object-top",
+  tech: ["React", "CSS"],
+  github: "https://github.com/Adjababy/travel-explore",
+  demo: "https://adjababy.github.io/travel-explore/#/",
+},
 
   {
     title: "Design Graphique",
     description:
       "Création de logos, affiches, flyers et visuels pour les réseaux sociaux avec Adobe Illustrator et Photoshop.",
     image: "/projects/design.png",
+      imagePosition: "object-top",
     tech: ["Illustrator", "Photoshop"],
     github: "#",
     demo: "#",
   },
 
   {
-    title: "Projet en cours",
+    title: "Le Journal de Dounamba",
     description:
-      "Une nouvelle application de blog est en cours de développement et sera bientôt complètement finie.",
-    image: "/projects/coming-soon.webp",
-    tech: ["React","Bootstrap"],
-    github: "https://adjababy.github.io/a-blog-app/",
-    demo: "https://adjababy.github.io/a-blog-app/#",
+      "Blog personnel avec CMS headless (Contentful), système de commentaires et interface animée. Articles sur mon apprentissage en développement web.",
+    image: "/projects/blog-app.jpeg",
+    tech: ["React", "Contentful", "Giscus"],
+    github: "https://github.com/Adjababy/a-blog-app",
+    demo: "https://adjababy.github.io/a-blog-app/",
   },
 ];
 
 function Projects() {
   return (
     <section
-  id="project"
+  id="projects"
   className="bg-slate-900 py-28 border-t border-slate-800"
 >
       <div className="max-w-7xl mx-auto px-8">
 
         <h2 className="text-5xl font-bold text-center text-purple-400 mb-4">
-          Mes projets
+          Mes projects
         </h2>
 
         <p className="text-center text-gray-400 mb-16">
@@ -72,9 +75,10 @@ function Projects() {
               <img
   src={project.image}
   alt={project.title}
-  className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+  className={`w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110 ${
+    project.imagePosition ?? "object-center"
+  }`}
 />
-
               <div className="p-6">
 
                 <h3 className="text-2xl font-bold mb-3">
