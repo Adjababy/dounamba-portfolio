@@ -15,6 +15,15 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const links = [
+    { href: "#home", label: "Accueil" },
+    { href: "#projects", label: "Projects" },
+    { href: "#about", label: "À propos" },
+    { href: "#timeline", label: "Parcours" },
+    { href: "#services", label: "Services" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -33,12 +42,13 @@ function Navbar() {
         </a>
 
         <ul className="hidden md:flex gap-8 text-white font-medium">
-          <li><a href="#home" className="hover:text-purple-400">Accueil</a></li>
-          <li><a href="#about" className="hover:text-purple-400">À propos</a></li>
-          <li><a href="#skills" className="hover:text-purple-400">Compétences</a></li>
-          <li><a href="#timeline" className="hover:text-purple-400">Parcours</a></li>
-          <li><a href="#projects" className="hover:text-purple-400">Projects</a></li>
-          <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="hover:text-purple-400">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <button
@@ -51,12 +61,11 @@ function Navbar() {
 
       {open && (
         <div className="md:hidden bg-slate-900 text-white flex flex-col px-8 pb-6 space-y-5">
-          <a href="#home" onClick={() => setOpen(false)}>Accueil</a>
-          <a href="#about" onClick={() => setOpen(false)}>À propos</a>
-          <a href="#skills" onClick={() => setOpen(false)}>Compétences</a>
-          <a href="#timeline" onClick={() => setOpen(false)}>Parcours</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          {links.map((link) => (
+            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              {link.label}
+            </a>
+          ))}
         </div>
       )}
     </nav>

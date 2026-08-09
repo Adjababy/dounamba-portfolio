@@ -25,21 +25,22 @@ const projects = [
 },
 
   {
-    title: "Design Graphique",
-    description:
-      "Création de logos, affiches, flyers et visuels pour les réseaux sociaux avec Adobe Illustrator et Photoshop.",
-    image: "/projects/design.png",
-      imagePosition: "object-top",
-    tech: ["Illustrator", "Photoshop"],
-    github: "#",
-    demo: "#",
-  },
+  title: "Design Graphique",
+  description:
+    "Création de logos, affiches, flyers et visuels pour les réseaux sociaux avec Adobe Illustrator et Photoshop.",
+  image: "/projects/design.png",
+  imagePosition: "object-[center_30%]",
+  tech: ["Illustrator", "Photoshop"],
+  github: "#",
+  demo: "#",
+},
 
   {
     title: "Le Journal de Dounamba",
     description:
       "Blog personnel avec CMS headless (Contentful), système de commentaires et interface animée. Articles sur mon apprentissage en développement web.",
     image: "/projects/blog-app.jpeg",
+    imagePosition: "object-[center_10%]",
     tech: ["React", "Contentful", "Giscus"],
     github: "https://github.com/Adjababy/a-blog-app",
     demo: "https://adjababy.github.io/a-blog-app/",

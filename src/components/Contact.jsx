@@ -6,6 +6,7 @@ import {
   FaMapMarkerAlt,
   FaGithub,
   FaLinkedin,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 function Contact() {
@@ -62,6 +63,21 @@ function Contact() {
               </div>
             </div>
 
+            <a
+              href="https://wa.me/22391678049"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-5 bg-slate-800 p-5 rounded-2xl hover:bg-slate-700 transition"
+            >
+              <FaWhatsapp className="text-purple-400 text-2xl" />
+              <div>
+                <h4 className="font-semibold">WhatsApp</h4>
+                <p className="text-gray-400">
+                  +223 91 67 80 49
+                </p>
+              </div>
+            </a>
+
             <div className="flex items-center gap-5 bg-slate-800 p-5 rounded-2xl">
               <FaMapMarkerAlt className="text-purple-400 text-2xl" />
               <div>
@@ -86,8 +102,8 @@ function Contact() {
 
             <div className="flex items-center gap-5 bg-slate-800 p-5 rounded-2xl">
               <FaLinkedin className="text-purple-400 text-2xl" />
-              <a
-                href="https://linkedin.com/in/adja-traore-472444258"
+              
+                <a href="https://linkedin.com/in/adja-traore-472444258"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-purple-400"
